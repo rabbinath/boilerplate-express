@@ -1,1 +1,1 @@
-# [Introduction to the Basic Node and Express Challenges](https://https://github.com/rabbinath/boilerplate-express/)
+# [Introduction to the Basic Node and Express Challenges](https://github.com/rabbinath/boilerplate-express/)
