@@ -23,8 +23,8 @@ app.get('/now', (req, res, next) => {
 
 
 app.get("/:word/echo", (req, res) => {
-    
-    res.json({echo: req.params.word})
+    var pword=req.params.word;
+    res.json({echo: pword});
     }
 );
 
