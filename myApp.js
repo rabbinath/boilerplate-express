@@ -3,7 +3,7 @@ var app = express();
 //console.log("Hello World");
 absolutePath = __dirname + "/views/index.html";
 pubPath=__dirname + "/public";
-app.use(express.static(pubPath));
+app.use("/public",express.static(pubPath));
 app.get('/', (req, res) => res.sendFile(absolutePath));
 
 // Start the Express server
