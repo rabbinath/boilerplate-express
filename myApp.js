@@ -8,7 +8,7 @@ app.use("/public",express.static(pubPath));
 app.get("/", (req, res) => res.sendFile(absolutePath));
 app.get("/json",(req, res) => {
 
-    if (process.env.MESSAGE_STYLE==="upper")
+    if (process.env.MESSAGE_STYLE==="uppercase")
     {
         res.json({ message: "HELLO JSON"});
     }
