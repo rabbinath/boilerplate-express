@@ -19,10 +19,14 @@ app.get('/now', (req, res, next) => {
         (req,res) => {
             res.json({time: req.time})
         }
-
-    
 );
 
+
+app.get("/:word/echo", (req, rest) => {
+    
+    res.json({echo: req.params.word})
+    }
+);
 
 app.get("/", (req, res) => res.sendFile(absolutePath));
 
