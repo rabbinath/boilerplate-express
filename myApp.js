@@ -11,11 +11,17 @@ app.use((req,res,next) => {
   next();
 });
 
-app.get('/now', function(req, res, next){
+app.get('/now', (req, res, next) => {
     req.time = new Date().toString();
-    res.json({time: req.time});
-    next();
-});
+    
+    next();},
+    
+        (req,res) => {
+            res.json({time: req.time})
+        }
+
+    
+);
 
 
 app.get("/", (req, res) => res.sendFile(absolutePath));
