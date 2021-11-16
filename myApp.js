@@ -33,7 +33,7 @@ app.get("/name", (req, res) => {
     var lastname=req.query.last;
     
     
-    res.json({ name: $firstName +" " + $lastName });
+    res.json({ name: firstName +" " + lastName });
     }
 );
 
