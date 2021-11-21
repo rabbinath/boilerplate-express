@@ -24,17 +24,20 @@ app.get('/now', (req, res, next) => {
 );
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.put("/name", (req, res) => {
-    var pword=req.params.word;
-    res.json({echo: pword});
-    }
-);
+
 app.get("/:word/echo", (req, res) => {
     var pword=req.params.word;
     res.json({echo: pword});
     }
 );
 
+app.put("/name", (req, res) => {
+    
+  var string = req.body.first + " " + req.body.last;
+  res.json({ name: string });
+    
+    }
+);
 app.get("/name", (req, res) => {
     var firstName=req.query.first;
     var lastName=req.query.last;
