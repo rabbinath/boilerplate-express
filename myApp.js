@@ -23,7 +23,7 @@ app.get('/now', (req, res, next) => {
         }
 );
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/:word/echo", (req, res) => {
     var pword=req.params.word;
