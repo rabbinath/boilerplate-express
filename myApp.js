@@ -35,7 +35,7 @@ app.put("/name", (req, res) => {
     
   var string1 = req.body.first + " " + req.body.last;
  /// res.json({ name: string1 });
- res.json({ name: req.body });
+ res.json({ name: req.body.first });
     }
 );
 app.get("/name", (req, res) => {
