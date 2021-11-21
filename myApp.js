@@ -33,8 +33,8 @@ app.get("/:word/echo", (req, res) => {
 
 app.put("/name", (req, res) => {
     
-  var string = req.body.first + " " + req.body.last;
-  res.json({ name: string });
+  var string1 = req.body.first + " " + req.body.last;
+  res.json({ name: string1 });
     
     }
 );
