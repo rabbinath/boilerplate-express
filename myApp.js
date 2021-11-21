@@ -23,19 +23,19 @@ app.get('/now', (req, res, next) => {
         }
 );
 
-app.use(bodyParser.urlencoded({extended: false}));
+
 
 app.get("/:word/echo", (req, res) => {
     var pword=req.params.word;
     res.json({echo: pword});
     }
 );
-
-app.put("/name", (req, res) => {
+app.use(bodyParser.urlencoded({extended: false}));
+app.post("/name", (req, res) => {
     
   var string1 = req.body.first + " " + req.body.last;
  /// res.json({ name: string1 });
- res.json({ name: req.body.first });
+ res.json({ name: req.body.string1 });
     }
 );
 app.get("/name", (req, res) => {
