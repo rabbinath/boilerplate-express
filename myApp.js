@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var dotenv=require("dotenv").config();
+var bodyParser=require("body-parser");
 //console.log("Hello World");
 absolutePath = __dirname + "/views/index.html";
 pubPath=__dirname + "/public";
@@ -10,6 +11,7 @@ app.use((req,res,next) => {
     
   next();
 });
+
 
 app.get('/now', (req, res, next) => {
     req.time = new Date().toString();
@@ -21,7 +23,7 @@ app.get('/now', (req, res, next) => {
         }
 );
 
-
+app.use(bodyParser.urlencoded({extended: false}));
 app.get("/:word/echo", (req, res) => {
     var pword=req.params.word;
     res.json({echo: pword});
