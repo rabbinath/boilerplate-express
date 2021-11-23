@@ -35,9 +35,9 @@ app.get("/:word/echo", (req, res) => {
 
 app.post("/name", (req, res) => {
     
-  var string = req.body.first+ " " + req.body.last;
- /// res.json({ name: string1 });
- res.json({ name: req.body.string });
+  var string1 = req.body.first+ " " + req.body.last;
+  res.json({ name: string1 });
+ //res.json({ name: req.body.string });
     }
 );
 app.get("/name", (req, res) => {
