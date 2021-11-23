@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var dotenv=require("dotenv").config();
-var bodyParser=require("body-parser");
+var bodyparser=require("body-parser");
 //console.log("Hello World");
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json())
 absolutePath = __dirname + "/views/index.html";
 pubPath=__dirname + "/public";
 app.use("/public",express.static(pubPath));
@@ -30,19 +32,20 @@ app.get("/:word/echo", (req, res) => {
     res.json({echo: pword});
     }
 );
-app.use(bodyParser.urlencoded({extended: false}));
+
 app.post("/name", (req, res) => {
     
-  var string1 = req.body.first + " " + req.body.last;
+  var string = req.body.first+ " " + req.body.last;
  /// res.json({ name: string1 });
- res.json({ name: req.body.string1 });
+ res.json({ name: req.body.string });
     }
 );
 app.get("/name", (req, res) => {
     var firstName=req.query.first;
     var lastName=req.query.last;
   //  res.json({ name: req.body.first });    
-    res.json({ name: req.body.first +" " + req.body.last });
+    res.json({ name: firstName +" " + lastName });
+   // console.log("Using Body-parser: ", req.body.first)
     }
 );
 
